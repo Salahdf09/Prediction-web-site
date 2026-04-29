@@ -1,0 +1,25 @@
+ <div className="navbar">
+            
+             <img className="logo" src={logo} alt="Logo" />
+             <ul className="nav-links">
+                   <li><a href="#Hero">Home</a></li>
+                   <li><a href="#About">About</a></li>
+                   <li><a href="#Services">Services</a></li>
+                   <li><a href="#Feedback">Feedback</a></li>
+             </ul>
+
+           <div className="navbtns">
+              <button className="btn_login">Log in</button> 
+              <button className="btn_signup">Sign up</button> 
+           </div> 
+           
+          </div>
+
+
+
+    )
+
+
+}
+
+export default Navbar;

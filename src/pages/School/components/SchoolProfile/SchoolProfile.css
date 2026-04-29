@@ -1,0 +1,375 @@
+.settings-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Desktop Header ── */
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settings-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #132C41;
+  margin: 0;
+}
+
+.btn-cancel {
+  background: #fff;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.btn-cancel:hover {
+  border-color: #2E6A8E;
+  color: #2E6A8E;
+}
+
+/* ── Mobile Header — hidden on desktop ── */
+.mobile-settings-header {
+  display: none;
+}
+
+/* ── Mobile Tabs — hidden on desktop ── */
+.mobile-tabs {
+  display: none;
+}
+
+/* ── Desktop Body ── */
+.settings-body {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* ── Desktop Left tabs ── */
+.settings-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.settings-tab {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s, border 0.2s;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.settings-tab:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.settings-tab.active {
+  border-color: #2E6A8E;
+}
+
+.tab-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #132C41;
+}
+
+/* ── Right content ── */
+.settings-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Photo row ── */
+.photo-row {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.profile-avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.profile-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #c0a898;
+}
+
+.avatar-edit-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FFD230;
+  border: none;
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* ── Form card ── */
+.profile-form-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.form-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #132C41;
+  margin: 0 0 20px 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #333;
+  outline: none;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #2E6A8E;
+}
+
+.btn-update {
+  width: 100%;
+  background: #2E5F82;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 13px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-update:hover {
+  opacity: 0.88;
+}
+
+/* ── Password section ── */
+.password-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.lock-icon {
+  font-size: 24px;
+}
+
+.password-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* ── Notifications ── */
+.notif-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notif-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #132C41;
+  margin: 0;
+}
+
+.notif-divider {
+  height: 1px;
+  background: #f0f0f0;
+}
+
+.notif-text {
+  font-size: 13px;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.notif-action-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-notif-action {
+  background: #1C3E5B;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 7px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-notif-action:hover {
+  opacity: 0.88;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+
+  .settings-header {
+    display: none; /* 👈 hide desktop header */
+  }
+
+  .settings-tabs {
+    display: none !important; /* 👈 hide desktop sidebar tabs */
+  }
+
+  .settings-body {
+    flex-direction: column;
+    gap: 0; /* 👈 remove gap */
+  }
+
+  /* Hide the sidebar completely */
+  .settings-body .settings-tabs {
+    display: none !important;
+  }
+  .profile-panel{
+   margin-right: 2px !important;
+   margin:  2px !important;
+  }
+
+  .mobile-settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #6da5c8 0%, #274967 40%, #1a3c57 100%);
+    border-radius: 12px;
+    padding: 15px 20px;
+  }
+
+  .mobile-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid #e0e0e0;
+    overflow-x: auto;
+  }
+
+  .mobile-tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px 5px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #888;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+  }
+
+  .mobile-tab.active {
+    color: #132C41;
+    border-bottom: 2px solid #132C41;
+    font-weight: 800;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+    width: 100%;
+  }
+
+  .form-group.full-width {
+    grid-column: 1;
+  }
+
+  .profile-form-card {
+    padding: 16px;
+  }
+}
+
+.form-btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.password-btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}

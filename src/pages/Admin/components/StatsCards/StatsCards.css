@@ -1,0 +1,50 @@
+.admin-stat-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  flex: 1,2; /* 👈 takes more space than prediction cards */
+}
+
+.admin-stat-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px 24px; /* 👈 more padding */
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  border-left: 4px solid transparent;
+  /* removed fixed height 👈 */
+}
+
+.admin-stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-stat-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.admin-stat-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: #132C41;
+  line-height: 1;
+}
+
+.admin-stat-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
+  align-items: right;
+  margin-right: 0px;
+}
