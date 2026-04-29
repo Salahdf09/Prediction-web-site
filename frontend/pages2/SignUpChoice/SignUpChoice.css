@@ -1,0 +1,90 @@
+.signup-choice {
+  min-height: 100vh;
+  background-color: #DBE0EB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 5vw, 60px) clamp(16px, 4vw, 40px);
+}
+
+.signup-choice h1 {
+  font-size: clamp(28px, 5vw, 50px);
+  font-weight: bold;
+  color: #132C41;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.signup-choice > p {
+  font-size: clamp(14px, 1.5vw, 20px);
+  color: #284B69;
+  margin-bottom: clamp(30px, 5vw, 50px);
+  text-align: center;
+}
+
+/* ── Grid container ─────────────────────────────────────────── */
+.choice-cards {
+  display: grid;
+  /* 4 columns on wide screens, shrinks fluidly */
+  grid-template-columns: repeat(4, minmax(0, 220px));
+  gap: clamp(16px, 2.5vw, 30px);
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* 2 columns on tablets */
+@media (max-width: 900px) {
+  .choice-cards {
+    grid-template-columns: repeat(2, minmax(0, 260px));
+  }
+}
+
+/* 1 column on small phones */
+@media (max-width: 480px) {
+  .choice-cards {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+  }
+}
+
+/* ── Card ───────────────────────────────────────────────────── */
+.choice-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: clamp(24px, 4vw, 40px) clamp(20px, 3vw, 30px);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.choice-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
+  border: 2px solid #FFD230;
+}
+
+/* ── Icon ───────────────────────────────────────────────────── */
+.choice-icon {
+  display: block;
+  width: clamp(48px, 8vw, 64px);
+  height: clamp(48px, 8vw, 64px);
+  margin: 0 auto clamp(14px, 2vw, 20px);
+  object-fit: contain;
+}
+
+/* ── Card text ──────────────────────────────────────────────── */
+.choice-card h2 {
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: bold;
+  color: #132C41;
+  margin-bottom: 8px;
+}
+
+.choice-card p {
+  font-size: clamp(12px, 1.2vw, 14px);
+  color: #284B69;
+  line-height: 1.5;
+}

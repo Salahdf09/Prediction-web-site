@@ -1,0 +1,475 @@
+.students-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Page header ── */
+.students-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.students-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #132C41;
+  margin: 0;
+}
+
+.add-student-btn {
+  background: linear-gradient(to right, #2E6A8E, #132C41);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+}
+
+.add-student-btn span {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.add-student-btn:hover { opacity: 0.88; }
+
+/* ── Card ── */
+.students-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  overflow-x: auto; /* 👈 allows horizontal scroll on mobile */
+}
+
+.students-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.students-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #132C41;
+}
+
+/* ── Search ── */
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 7px 36px 7px 14px;
+  font-size: 13px;
+  color: #555;
+  outline: none;
+  width: 220px;
+  background: #f8f9fc;
+  transition: border 0.2s;
+}
+
+.search-box input:focus { border-color: #2E6A8E; }
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 14px;
+  color: #aaa;
+  pointer-events: none;
+}
+
+/* ── Table ── */
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 550px; /* 👈 prevents table from getting too squished */
+}
+
+.students-table thead tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.students-table th {
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.students-table td {
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.students-table tbody tr:last-child td { border-bottom: none; }
+.students-table tbody tr:hover { background: #f8fafc; }
+.selected-row { background: #eef5fb !important; }
+
+/* ── Checkbox ── */
+.students-table input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #2E6A8E;
+  cursor: pointer;
+}
+
+/* ── Avatar + name ── */
+.student-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.student-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #d0d5de;
+  flex-shrink: 0;
+}
+
+.student-id {
+  color: #555;
+  font-weight: 500;
+}
+
+/* ── Actions ── */
+.action-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-delete,
+.btn-edit {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-delete img,
+.btn-edit img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.btn-delete:hover { background: #fde8e8; }
+.btn-edit:hover { background: #e8f0fe; }
+
+/* ── Header buttons ── */
+.header-btns {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap; /* 👈 wrap on small screens */
+}
+
+.btn-export {
+  background: #fff;
+  border: 1.5px solid #2E6A8E;
+  color: #2E6A8E;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+  height: 38px;
+}
+
+.btn-export:hover { background: #eef5fb; }
+
+.btn-export span {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* ── Modal ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 15px; /* 👈 padding so modal doesn't touch edges on mobile */
+}
+
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 700px;
+  max-width: 95vw;
+  max-height: 90vh; /* 👈 scrollable if too tall */
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-header h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #132C41;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #888;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.modal-close:hover { background: #f0f0f0; }
+
+.modal-body {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2E6A8E;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.modal-grid.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.modal-field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+}
+
+.modal-field input {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 13px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.modal-field input:focus { border-color: #2E6A8E; }
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.btn-cancel-modal {
+  background: #fff;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  padding: 9px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.btn-cancel-modal:hover { border-color: #2E6A8E; color: #2E6A8E; }
+
+.btn-confirm {
+  background: linear-gradient(to right, #2E6A8E, #132C41);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.mobile-student-cards {
+  display: none;
+}
+
+.btn-confirm:hover { opacity: 0.88; }
+
+/* 👇 Mobile */
+@media (max-width: 768px) {
+  .students-table {
+    display: none;
+  }
+
+  /* Show cards on mobile */
+  .mobile-student-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .mobile-student-card {
+    background: white;
+    border-radius: 14px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .mobile-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .mobile-card-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mobile-card-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #d0d5de;
+    flex-shrink: 0;
+  }
+
+  .mobile-card-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #132C41;
+    margin: 0 0 4px;
+  }
+
+  .mobile-card-id {
+    background: #132C41;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  .mobile-card-actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .mobile-card-bottom {
+    display: flex;
+    gap: 20px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 10px;
+  }
+
+  .mobile-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .mobile-info-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .mobile-info-value {
+    font-size: 13px;
+    color: #132C41;
+    font-weight: 500;
+  }
+
+  /* Also fix the card background on mobile */
+  .students-card {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .students-card-header {
+    background: white;
+    border-radius: 12px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .search-box input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

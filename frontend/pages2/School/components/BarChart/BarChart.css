@@ -1,0 +1,28 @@
+.bar-chart-container {
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.bar-chart-container h3 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #132C41;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .bar-chart-container {
+    height: auto;
+    padding: 1px 1px;
+  }
+
+  .bar-chart-container h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+}

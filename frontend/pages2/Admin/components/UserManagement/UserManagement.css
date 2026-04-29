@@ -1,0 +1,365 @@
+.um-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Tabs ── */
+.um-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+}
+
+.um-tab {
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.um-tab:hover {
+  background: #e8edf3;
+}
+
+.um-tab.active {
+  background: #ffffff;
+  color: #132C41;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* ── Action buttons row ── */
+.um-actions-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.um-btn-export {
+  background: transparent;
+  border: 2px solid #2E6A8E;
+  color: #2E6A8E;
+  border-radius: 8px;
+  padding: 6px 12px;   /* ← smaller */
+  font-size: 12px;     /* ← smaller */
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.um-btn-export:hover {
+  background: #2E6A8E;
+  color: #fff;
+}
+
+.um-btn-import {
+  background: transparent;
+  border: 2px solid #5a8e2e;
+  color: #5a8e2e;
+  border-radius: 8px;
+  padding: 6px 12px;   /* ← smaller */
+  font-size: 12px;     /* ← smaller */
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.um-btn-import:hover {
+  background: #5a8e2e;
+  color: #fff;
+}
+
+.um-btn-add {
+  background: #132C41;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 12px;   /* ← smaller */
+  font-size: 12px;     /* ← smaller */
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.um-btn-add:hover {
+  opacity: 0.85;
+}
+
+/* ── Search card ── */
+.um-search-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.um-search-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #132C41;
+  margin: 0;
+}
+
+.um-search {
+  display: flex;
+  align-items: center;
+  background: #f7f8fa;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 9px 14px;
+  gap: 8px;
+}
+
+.um-search input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #555;
+  background: transparent;
+  width: 100%;
+}
+
+.um-search-icon {
+  font-size: 16px;
+  color: #aaa;
+  flex-shrink: 0;
+}
+
+/* ── Table card ── */
+.um-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.um-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.um-table thead tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.um-table th {
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.um-table td {
+  padding: 13px 14px;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.um-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.um-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.um-selected {
+  background: #eef5fb !important;
+}
+
+.um-table input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #2E6A8E;
+  cursor: pointer;
+}
+
+.um-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.um-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #d0d5de;
+  flex-shrink: 0;
+}
+
+.um-id {
+  color: #555;
+  font-weight: 500;
+}
+
+.um-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.um-btn-delete,
+.um-btn-edit {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.um-btn-delete img,
+.um-btn-edit img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.um-btn-delete:hover { background: #fde8e8; }
+.um-btn-edit:hover   { background: #e8f0fe; }
+
+/* ── Mobile cards — hidden on desktop ── */
+.um-mobile-cards {
+  display: none;
+}
+
+/* ══════════════════════════════════
+   MOBILE
+══════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Hide desktop table */
+  .um-card {
+    display: none;
+  }
+
+  /* Tabs stretch full width */
+  .um-tabs {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .um-tab {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+
+  /* Stack action buttons */
+  .um-actions-row {
+    flex-direction: row;   /* ← keep them in a row on mobile too */
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .um-btn-export,
+  .um-btn-import,
+  .um-btn-add {
+    width: auto;           /* ← don't stretch full width */
+    text-align: center;
+  }
+  
+
+  /* Search card full width */
+  .um-search-card {
+    padding: 14px 16px;
+  }
+
+  /* Show mobile cards */
+  .um-mobile-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .um-mobile-card {
+    background: white;
+    border-radius: 14px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .um-mobile-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .um-mobile-card-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .um-mobile-card-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #132C41;
+    margin: 0 0 4px;
+  }
+
+  .um-mobile-card-id {
+    background: #132C41;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  .um-mobile-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .um-mobile-card-bottom {
+    display: flex;
+    gap: 20px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 10px;
+  }
+
+  .um-mobile-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .um-mobile-info-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .um-mobile-info-value {
+    font-size: 13px;
+    color: #132C41;
+    font-weight: 500;
+  }
+
+  /* Bigger avatar in cards */
+  .um-mobile-card .um-avatar {
+    width: 45px;
+    height: 45px;
+  }
+}

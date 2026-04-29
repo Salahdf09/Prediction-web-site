@@ -1,0 +1,150 @@
+.howItWorks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #DBE0EB;
+  padding: 40px clamp(20px, 4vw, 60px);
+  min-height: 100vh;
+  box-sizing: border-box;
+  gap: clamp(10px, 2vw, 40px);
+}
+
+.hiw_arc_img {
+  width: 32%;
+  max-width: 420px;
+  min-width: 180px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 1;
+}
+
+.hiw_right {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.2vw, 15px);
+  width: 65%;
+}
+
+.step1, .step2, .step3, .step4, .step5 {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.5vw, 20px);
+  position: relative;
+  z-index: 1;
+}
+
+.step1, .step5 { margin-left: clamp(0px, 0.1vw, 1px); }
+.step2, .step4 { margin-left: clamp(10px, 3vw, 40px); }
+.step3         { margin-left: clamp(20px, 5vw, 70px); }
+
+.step-number {
+  background-color: #132C41;
+  color: white;
+  border-radius: 50%;
+  width: clamp(38px, 4vw, 55px);
+  height: clamp(38px, 4vw, 55px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(12px, 1.3vw, 18px);
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.step-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #9bb1cb;
+  border-radius: 50px;
+  padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 25px);
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
+}
+
+.step-card:hover {
+  transform: translateX(10px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.step-card h3 {
+  font-size: clamp(13px, 1.3vw, 17px);
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.step-card p {
+  font-size: clamp(11px, 1vw, 14px);
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.step-icone {
+  width: clamp(28px, 3vw, 40px);
+  height: clamp(28px, 3vw, 40px);
+  object-fit: contain;
+  margin-left: clamp(8px, 1vw, 15px);
+  flex-shrink: 0;
+}
+
+.hiw_mobile_title {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .howItWorks {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .hiw_arc_img {
+    display: none;
+  }
+
+  .hiw_right {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .step1, .step2, .step3,
+  .step4, .step5 {
+    margin-left: 0 !important;
+  }
+
+  .step-card {
+    border-radius: 20px;
+    padding: 10px 15px;
+    width: 100%;
+    flex: 1; 
+    box-sizing: border-box;
+  }
+
+  .step-icone {
+    display: none;
+  }
+
+  .hiw_mobile_title {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .hiw_mobile_title h2 {
+    font-size: 29px;
+    font-weight: bold;
+    color: #132C41;
+    margin-bottom: 6px;
+  }
+
+  .hiw_mobile_title h3 {
+    font-size: 18px;
+    color: #284B69;
+    font-weight: 500;
+  }
+
+}

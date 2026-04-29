@@ -1,0 +1,110 @@
+.school-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background-color: #DBE0EB;
+}
+
+.dashboard-content {
+  margin-left: 220px;
+  flex: 1;
+  padding: 20px 40px;
+  min-height: 100vh;
+  background-color: #DBE0EB;
+}
+
+.bottom-nav {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-content {
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .school-dashboard {
+    flex-direction: column;
+  }
+
+  .dashboard-content {
+    margin-left: 0   !important;
+    padding: 10px 15px;
+    padding-bottom: 70px;
+  }
+
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* 👈 fixed height */
+    background-color: #132C41;
+    z-index: 1000;
+    justify-content: space-around;
+    align-items: stretch; /* 👈 children stretch to full height */
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+    padding: 0; /* 👈 remove padding */
+  }
+
+  .bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    color: #ffffff;
+    flex: 1;
+    height: 100%; /* 👈 full height of navbar */
+    transition: all 0.2s ease;
+    border-radius: 0;
+  }
+
+  .bottom-nav-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+  .bottom-nav-item span {
+    font-size: 20px;
+  }
+
+  .bottom-nav-item p {
+    margin: 0;
+    font-size: 11px;
+  }
+
+  .bottom-nav-item.active {
+    background-color: #DBE0EB;
+    color: #132C41;
+    font-weight: bold;
+    flex: 1;
+    height: 100%; /* 👈 same height as navbar */
+    border-radius:   0;
+  }
+
+  .bottom-nav-item.active::before,
+  .bottom-nav-item.active::after {
+    display: none;
+  }
+ 
+
+  /* First item (Stats) — square left, rounded right */
+  .bottom-nav-item:first-child.active {
+    border-radius: 0 15px 15px 0; /* 👈 only top-right rounded */
+  }
+
+  /* Middle item (Students) — rounded on both sides */
+  .bottom-nav-item:nth-child(2).active {
+    border-radius: 15px 15px 15px 15px; /* 👈 both top corners rounded */
+  }
+
+  /* Last item (Profile) — rounded left, square right */
+  .bottom-nav-item:last-child.active {
+    border-radius: 15px 0 0 15px; /* 👈 only top-left rounded */
+  }
+}
+ /* 👈 media query closes here */

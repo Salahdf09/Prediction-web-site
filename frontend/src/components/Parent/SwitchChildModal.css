@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+.pd-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  min-width: 300px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 8px 40px rgba(19, 44, 65, 0.18);
+}
+
+.pd-modal--form { max-width: 480px; }
+
+.pd-modal-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1a2a40;
+  margin-bottom: 16px;
+}
+
+.pd-modal-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid transparent;
+  background: #f4f6fa;
+  cursor: pointer;
+  text-align: left;
+  margin-bottom: 8px;
+  transition: border-color 0.15s;
+}
+
+.pd-modal-item.active { border-color: #132C41; }
+.pd-modal-item:hover  { border-color: #c0cad8; }
+
+.pd-modal-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.pd-modal-name {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #1a2a40;
+}
+
+.pd-modal-sub {
+  font-size: 0.72rem;
+  color: #8899aa;
+}
+
+.pd-modal-check {
+  margin-left: auto;
+  font-size: 1rem;
+  color: #132C41;
+  font-weight: 800;
+}
+
+.pd-modal-divider {
+  height: 1px;
+  background: #eaeef4;
+  margin: 8px 0;
+}
+
+.pd-modal-add-another-btn {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1.5px dashed #c0cad8;
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #45759D;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.pd-modal-add-another-btn:hover { background: #f0f4f8; }
+
+.pd-modal-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.pd-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.pd-modal-field--full { width: 100%; }
+
+.pd-modal-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #1a2a40;
+}
+
+.pd-modal-input {
+  padding: 8px 11px;
+  border: 1.5px solid #d0d8e4;
+  border-radius: 7px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  color: #1a2a40;
+  outline: none;
+  transition: border-color 0.18s;
+  height: 36px;
+}
+
+.pd-modal-input:focus { border-color: #132C41; }
+
+.pd-modal-error {
+  font-size: 0.76rem;
+  color: #b91c1c;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.pd-modal-submit-btn {
+  width: 100%;
+  padding: 11px;
+  background: #1e3a52;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-bottom: 8px;
+}
+
+.pd-modal-submit-btn:hover { background: #274d6e; }
+
+.pd-modal-back-link {
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #45759D;
+  cursor: pointer;
+  padding: 4px;
+}
