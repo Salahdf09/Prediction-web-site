@@ -1,0 +1,215 @@
+.header {
+  margin-bottom: 20px;
+  position: sticky;
+  top: 10;
+  z-index: 100;
+  background-color: #DBE0EB;
+  padding-bottom: 5px;
+}
+
+.mobile-topbar {
+  display: none;
+}
+
+.header-bar {
+  background: linear-gradient(to right, #6da5c8 0%, #274967 40%, #1a3c57 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 20px;
+  border-radius: 15px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 35px;
+  margin-right: 45px;
+  height: 60px;
+  position: relative;
+  overflow: visible;
+}
+
+.header-bar-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.header-subtitle {
+  font-size: 10px;
+  color: #a0b4c8;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.header-title {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-bar span {
+  color: white;
+  font-weight: 700;
+}
+
+.header-icon-wrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #1a3c57;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  right: -40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden; /* ← allows avatar to fill the circle */
+}
+
+.header-icon {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* ── When showing a profile avatar, fill the circle ── */
+.header-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0; /* override default icon offset */
+}
+
+.header-line {
+  height: 2px;
+  background-color: #FFD230;
+  margin-top: 25px !important;
+  border-radius: 2px;
+  margin-left: 35px;
+  margin-right: 45px;
+}
+
+/* ── Mobile topbar avatar ── */
+.mobile-topbar-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #FFD230;
+  flex-shrink: 0;
+}
+
+.mobile-topbar-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding-bottom: 0;
+    margin-bottom: 15px !important;
+  }
+
+  .mobile-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+  }
+
+  .mobile-topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .notif-icon, .logout-icon {
+    width: 35px;
+    height: 35px;
+    background-color: #284B69;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .notif-icon img,
+  .logout-icon img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+  }
+
+  .mobile-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .header-bar {
+    margin: 0;
+    border-radius: 12px;
+    height: 85px !important;
+    padding: 10px 25px !important;
+    box-sizing: border-box;
+    gap: 25px;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .header-bar-text {
+    flex: 1;
+  }
+
+  .header-subtitle {
+    font-size: 16px !important;
+    color: #a0b4c8;
+    margin: 0 0 4px;
+    letter-spacing: 1px;
+  }
+
+  .header-title {
+    font-size: 18px !important;
+    font-weight: bold !important;
+    color: white;
+    margin: 0;
+    white-space: normal;
+  }
+
+  .header-icon-wrapper {
+    width: 58px;
+    height: 58px;
+    right: 0;
+    position: relative;
+    flex-shrink: 0;
+    background: #284B69;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .header-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+  }
+
+  .header-avatar {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+  }
+
+  .header-line {
+    margin: 8px 0 0;
+  }
+}

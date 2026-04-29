@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Nunito', sans-serif; }
+
+.login-page {
+  min-height: 100vh;
+  background-color: #c5cfe0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Top-left squiggle ── */
+.deco-left {
+  position: absolute;
+  width: 160px;
+  top: 0px;
+  left: 0px;
+  z-index: 5;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Right side: blob background + illustration on top ── */
+.deco-right-wrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.deco-right-blob {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+}
+
+.deco-right-img {
+  position: absolute;
+  bottom: 100px;
+  left: 65%;
+  transform: translateX(-45%);
+   width: 80%; 
+  height: auto;
+  z-index: 3;
+  object-fit: contain;
+}
+
+/* ── Center layout: card on left, space for blob on right ── */
+.login-card {
+  position: relative;
+  z-index: 10;
+  background: rgba(220, 228, 240, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 22px;
+  padding: 38px 42px 34px 42px;
+  width: 420px;
+  box-shadow: 0 8px 40px rgba(19, 44, 65, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  /* push card to the left side */
+  margin-right: 40%;
+}
+
+.login-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1a2a40;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+/* ── Google button ── */
+.google-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 0;
+  background: #ffffff;
+  border: 1.5px solid rgba(42, 63, 95, 0.15);
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.google-btn:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.12); }
+.google-icon { width: 20px; height: 20px; }
+
+/* ── OR divider ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(42, 63, 95, 0.25);
+}
+
+.divider-text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #5a6a7a;
+  letter-spacing: 0.05em;
+}
+
+/* ── Form ── */
+.login-form { display: flex; flex-direction: column; gap: 14px; }
+.form-group { display: flex; flex-direction: column; gap: 5px; }
+
+.form-group label {
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: #1a2a40;
+}
+
+.form-group input {
+  padding: 11px 14px;
+  border: 1.5px solid rgba(42, 63, 95, 0.18);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.83rem;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+}
+
+.form-group input::placeholder { color: #aab2bf; }
+.form-group input:focus { border-color: #132C41; background: rgba(255,255,255,0.9); }
+
+/* ── Log in button ── */
+.submit-row { display: flex; justify-content: center; margin-top: 10px; }
+
+.login-btn {
+  background: #f5c800;
+  color: #1a2a40;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 65px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 16px rgba(245,200,0,0.35);
+}
+.login-btn:hover { background: #e6ba00; transform: translateY(-2px); }
+
+/* ── Footer ── */
+.login-footer {
+  margin-top: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.login-footer p { font-size: 0.8rem; color: #5a6a7a; }
+
+.signup-link {
+  color: #3b82f6;
+  font-weight: 700;
+  text-decoration: none;
+}
+.signup-link:hover { text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .deco-right-wrapper { display: none; }
+  .login-card { margin-right: 0; width: 90vw; }
+}

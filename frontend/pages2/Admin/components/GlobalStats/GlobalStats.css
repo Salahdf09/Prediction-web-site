@@ -1,0 +1,38 @@
+.global-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.top-row {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.bottom-row {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  align-items: stretch;
+}
+
+.bottom-row > * {
+  flex: 1;
+}
+
+/* 👇 Mobile */
+@media (max-width: 768px) {
+  .top-row {
+    flex-direction: column; /* 👈 stack vertically */
+    gap: 12px;
+  }
+
+  .bottom-row {
+    flex-direction: column; /* 👈 stack vertically */
+    margin-top: 15px;
+    gap: 12px;
+  }
+}

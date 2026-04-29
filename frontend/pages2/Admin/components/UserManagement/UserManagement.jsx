@@ -1,0 +1,228 @@
+﻿import './UserManagement.css';
+import deleteIcon from '../../../../Assets2/delete.png';
+import editIcon from '../../../../Assets2/modify.png';
+import { useState, useRef } from 'react';
+
+const data = {
+  Students: [
+    { id: '01', name: 'Chaa Youssra',    phone: '+213 699576680' },
+    { id: '20', name: 'Zerroug Maram',   phone: '+213 699576680' },
+    { id: '50', name: 'Abdelli Chiraz',  phone: '+213 699576680' },
+    { id: '35', name: 'Aidouni Atef',    phone: '+213 699576680' },
+    { id: '35', name: 'Sahel Moussa',    phone: '+213 699576680' },
+    { id: '35', name: 'Berkani Takwa',   phone: '+213 699576680' },
+    { id: '35', name: 'Aiboud Ichrek',   phone: '+213 699576680' },
+    { id: '35', name: 'Guerrara Fatima', phone: '+213 699576680' },
+  ],
+  Parents: [
+    { id: '01', name: 'Chaa Youssra',    phone: '+213 699576680' },
+    { id: '20', name: 'Zerroug Maram',   phone: '+213 699576680' },
+    { id: '50', name: 'Abdelli Chiraz',  phone: '+213 699576680' },
+    { id: '35', name: 'Aidouni Atef',    phone: '+213 699576680' },
+    { id: '35', name: 'Sahel Moussa',    phone: '+213 699576680' },
+    { id: '35', name: 'Berkani Takwa',   phone: '+213 699576680' },
+    { id: '35', name: 'Aiboud Ichrek',   phone: '+213 699576680' },
+    { id: '35', name: 'Guerrara Fatima', phone: '+213 699576680' },
+  ],
+  Schools: [
+    { id: '01', name: 'Ecole Ibn Sina',   phone: '+213 699576680' },
+    { id: '02', name: 'Ecole El Amel',    phone: '+213 699576680' },
+    { id: '03', name: 'Ecole El Nour',    phone: '+213 699576680' },
+    { id: '04', name: 'Ecole El Wiam',    phone: '+213 699576680' },
+    { id: '05', name: 'Ecole El Fath',    phone: '+213 699576680' },
+    { id: '06', name: 'Ecole El Rahma',   phone: '+213 699576680' },
+    { id: '07', name: 'Ecole El Baraka',  phone: '+213 699576680' },
+    { id: '08', name: 'Ecole El Mokhtar', phone: '+213 699576680' },
+  ],
+};
+
+const columns = {
+  Students: ['Students Name', 'Student ID',  'Phone number'],
+  Parents:  ['Parents Name',  'Child ID',    'Phone number'],
+  Schools:  ['School Name',   'School ID',   'Phone number'],
+};
+
+const addLabel = {
+  Students: 'Add Student',
+  Parents:  'Add Parent',
+  Schools:  'Add School',
+};
+
+const searchPlaceholder = {
+  Students: 'Search by Name or ID',
+  Parents:  'Search by Name or ID',
+  Schools:  'Search by Name or ID',
+};
+
+const infoTitle = {
+  Students: 'Students Information',
+  Parents:  'Parents Information',
+  Schools:  'Schools Information',
+};
+
+const tabs = ['Students', 'Parents', 'Schools'];
+
+function UserManagement() {
+  const [activeTab, setActiveTab] = useState('Students');
+  const [search, setSearch]       = useState('');
+  const [selected, setSelected]   = useState([]);
+  const importRef = useRef();
+
+  const rows = data[activeTab].filter(r =>
+    r.name.toLowerCase().includes(search.toLowerCase()) ||
+    r.id.includes(search)
+  );
+
+  const toggleSelect = (name) =>
+    setSelected(prev =>
+      prev.includes(name) ? prev.filter(n => n !== name) : [...prev, name]
+    );
+
+  const handleImport = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      // handle your import logic here
+      console.log('Importing:', file.name);
+    }
+  };
+
+  const cols = columns[activeTab];
+
+  return (
+    <div className="um-page">
+
+      {/* â”€â”€ Tab bar â”€â”€ */}
+      <div className="um-tabs">
+        {tabs.map(tab => (
+          <button
+            key={tab}
+            className={`um-tab ${activeTab === tab ? 'active' : ''}`}
+            onClick={() => { setActiveTab(tab); setSelected([]); setSearch(''); }}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+
+      {/* â”€â”€ Action buttons row â”€â”€ */}
+      <div className="um-actions-row">
+        <button className="um-btn-export">Export CSV/PDF +</button>
+        <button className="um-btn-import" onClick={() => importRef.current.click()}>
+          Import File +
+        </button>
+        <input
+          ref={importRef}
+          type="file"
+          accept=".csv,.pdf,.xlsx"
+          style={{ display: 'none' }}
+          onChange={handleImport}
+        />
+        <button className="um-btn-add">
+          {addLabel[activeTab]} +
+        </button>
+      </div>
+
+      {/* â”€â”€ Search card â”€â”€ */}
+      <div className="um-search-card">
+        <h3 className="um-search-card-title">{infoTitle[activeTab]}</h3>
+        <div className="um-search">
+          <input
+            type="text"
+            placeholder={searchPlaceholder[activeTab]}
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+          <span className="um-search-icon">ðŸ”</span>
+        </div>
+      </div>
+
+      {/* â”€â”€ Desktop Table â”€â”€ */}
+      <div className="um-card">
+        <table className="um-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>{cols[0]}</th>
+              <th>{cols[1]}</th>
+              <th>{cols[2]}</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, i) => (
+              <tr key={i} className={selected.includes(row.name) ? 'um-selected' : ''}>
+                <td>
+                  <input
+                    type="checkbox"
+                    checked={selected.includes(row.name)}
+                    onChange={() => toggleSelect(row.name)}
+                  />
+                </td>
+                <td>
+                  <div className="um-name-cell">
+                    <div className="um-avatar" />
+                    <span>{row.name}</span>
+                  </div>
+                </td>
+                <td className="um-id">#{row.id}</td>
+                <td>{row.phone}</td>
+                <td>
+                  <div className="um-actions">
+                    <button className="um-btn-delete" title="Delete">
+                      <img src={deleteIcon} alt="delete" />
+                    </button>
+                    <button className="um-btn-edit" title="Edit">
+                      <img src={editIcon} alt="edit" />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* â”€â”€ Mobile Cards â”€â”€ */}
+      <div className="um-mobile-cards">
+        {rows.map((row, i) => (
+          <div
+            key={i}
+            className={`um-mobile-card ${selected.includes(row.name) ? 'um-selected' : ''}`}
+          >
+            <div className="um-mobile-card-top">
+              <div className="um-mobile-card-left">
+                <div className="um-avatar" />
+                <div>
+                  <p className="um-mobile-card-name">{row.name}</p>
+                  <span className="um-mobile-card-id">#{row.id}</span>
+                </div>
+              </div>
+              <div className="um-mobile-card-actions">
+                <input
+                  type="checkbox"
+                  checked={selected.includes(row.name)}
+                  onChange={() => toggleSelect(row.name)}
+                />
+                <button className="um-btn-delete" title="Delete">
+                  <img src={deleteIcon} alt="delete" />
+                </button>
+                <button className="um-btn-edit" title="Edit">
+                  <img src={editIcon} alt="edit" />
+                </button>
+              </div>
+            </div>
+            <div className="um-mobile-card-bottom">
+              <div className="um-mobile-card-info">
+                <span className="um-mobile-info-label">{cols[2]}</span>
+                <span className="um-mobile-info-value">{row.phone}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  );
+}
+
+export default UserManagement;
