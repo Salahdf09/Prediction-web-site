@@ -4,8 +4,12 @@ main.py — Point d'entrée de l'application PredictSchool API
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+<<<<<<< HEAD
 
 from database.database import engine, Base
+=======
+from database import engine, Base
+>>>>>>> origin/prediction-_app--Atefhh
 import models  # noqa: F401 — importer les modèles pour que SQLAlchemy les enregistre
 
 # ─────────────────────────────────────────────

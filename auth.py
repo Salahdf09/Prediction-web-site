@@ -16,7 +16,11 @@ from fastapi.security import OAuth2PasswordBearer
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
+<<<<<<< HEAD
 from database.database import get_db
+=======
+from database import get_db
+>>>>>>> origin/prediction-_app--Atefhh
 from models import Student, Parent, School, Admin, OTPCode
 
 # ─────────────────────────────────────────────

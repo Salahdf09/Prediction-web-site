@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Python
 venv/
 __pycache__/
@@ -44,6 +45,8 @@ dist-ssr
 *.sw?
 >>>>>>> 1f36bcc775d325d97ce4b5ff28a614fa1e96b9bc
 =======
+=======
+>>>>>>> origin/prediction-_app--Atefhh
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -262,4 +265,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+<<<<<<< HEAD
 >>>>>>> origin/prediction-_app--yousra-front
+=======
+>>>>>>> origin/prediction-_app--Atefhh

@@ -4,7 +4,11 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from sqlalchemy import func as sqlfunc
 from datetime import datetime
+<<<<<<< HEAD
 from database.database import get_db
+=======
+from database import get_db
+>>>>>>> origin/prediction-_app--Atefhh
 from schemas import (
     StudentCreate, StudentUpdate, StudentOut,
     ParentCreate, ParentUpdate, ParentOut,

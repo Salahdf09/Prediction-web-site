@@ -10,6 +10,10 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 from sqlalchemy.orm import Session
 from datetime import datetime
 from models import User, Student, Parent, School, Administrator
+<<<<<<< HEAD
+=======
+from database import get_db
+>>>>>>> origin/prediction-_app--Atefhh
 
 
 # ══════════════════════════════════════════════

@@ -7,7 +7,11 @@ import random
 from datetime import datetime, timedelta
 
 from sqlalchemy.orm import Session
+<<<<<<< HEAD
 from database.database import SessionLocal, engine, Base
+=======
+from database import SessionLocal, engine, Base
+>>>>>>> origin/prediction-_app--Atefhh
 from models import (
     User, Student, Parent, School, Admin,
     GradeRecord, Prediction, Orientation, Advice,

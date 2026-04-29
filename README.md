@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # integration-front-back
 integration
 =======
@@ -24,3 +25,7 @@ If you are developing a production application, we recommend using TypeScript wi
 # prediction-_app-
 Web Application for Predicting Official Exam Results
 >>>>>>> origin/prediction-_app--yousra-front
+=======
+# prediction-_app-
+Web Application for Predicting Official Exam Results
+>>>>>>> origin/prediction-_app--Atefhh

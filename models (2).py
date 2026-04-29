@@ -1,7 +1,11 @@
 from sqlalchemy import Column, Integer, String, Float, DateTime, Boolean, Text, ForeignKey, Date
 from sqlalchemy.orm import relationship
 from datetime import datetime
+<<<<<<< HEAD
 from database.database import Base
+=======
+from database import Base
+>>>>>>> origin/prediction-_app--Atefhh
 
 
 # ──────────────────────────────────────────────
