@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # integration-front-back
 integration
 =======
@@ -19,3 +20,7 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 >>>>>>> 1f36bcc775d325d97ce4b5ff28a614fa1e96b9bc
+=======
+# prediction-_app-
+Web Application for Predicting Official Exam Results
+>>>>>>> origin/prediction-_app--yousra-front

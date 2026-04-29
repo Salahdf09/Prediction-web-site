@@ -1,0 +1,896 @@
+NAV BAR :
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5qszdpx;
+    background-color: #1C3E5B;
+    height: 90px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: fixed; 
+    top: 0;          
+    width: 100%;    
+    z-index: 1000;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+.nav-links li a { 
+    color:  #FFD230;
+    text-decoration: none;
+    font-size: 25px; 
+    font-weight: bold;
+  
+
+}
+
+.nav-links li a:hover {
+    color: #FFD230;
+    text-decoration: underline;
+    text-shadow: 0px 5px 15px rgba(245, 197, 24, 0.6);
+}
+
+.btn_login, .btn_signup {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    width :140px;
+    height: 40px;
+    background-color: #FFD230;
+    color: #132C41;
+    transition: box-shadow 0.3s ease;
+  
+}
+.btn_login:hover, .btn_signup:hover {
+     box-shadow: 0px 5px 15px rgba(245, 197, 24, 0.6);
+
+}
+
+.navbtns {
+    display: flex;
+    gap: 20px;
+    margin-right: 50px;
+
+}
+
+.logo{
+    width: 60px;
+    height: 60px;
+    margin-left: 20px;
+    border-radius: 50%;
+    transition: filter 0.3s ease;
+
+}
+.logo:hover {
+    filter: drop-shadow(0px 5px 5px rgba(245, 197, 24, 0.6));
+  }
+
+HERO : 
+
+.hero_text{
+  background-color: #132C41;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 368px;
+  gap:10px;
+  margin-bottom: 70px;
+
+
+}
+.hero {
+  padding-top: 10px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #132C41;
+  padding-left: 60px;
+  padding-right: 60px;
+  min-height: 100vh;
+}
+
+.welcome {
+  color: white;
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  width :691px;
+   background: linear-gradient(to bottom, #e8e6de, #FFD230);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light_yellow {
+  display: flex;
+}
+
+
+.btn_explore{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #FFD230;
+    color: #132C41;
+    transition: box-shadow 0.3s ease;
+    width :400px;
+}
+.btn_explore:hover {
+     box-shadow: 0px 5px 15px rgba(245, 197, 24, 0.6);
+}
+
+.text{
+  color:rgb(212, 210, 210);
+}
+
+.hero_pic{
+  padding-top: 50px;
+  width: 700px;
+  height: 570px;
+}
+
+
+ABOUT US : 
+
+.about{
+  display: flex;
+  padding-top: 20px; 
+  align-items: center;
+  justify-content: space-between;
+  background-color:#DBE0EB; 
+  padding-left: 60px;
+  padding-right: 60px;
+  min-height: 100vh;
+  gap:40px;
+}
+
+.about_text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 30px;
+  background-color: #DBE0EB;
+  width: 600px;
+ 
+}
+
+.about_text h1{
+  font-size: 55px;
+  font-weight: bold;
+  color: #132C41;
+  margin-bottom: 20px;
+}
+
+.about_text p{
+  font-size: 22px;
+  color: #132C41;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.about_images{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  height: 350px;
+  flex-shrink: 0;
+}
+
+.img-wrapper {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.img-wrapper.center {
+  width: 320px;
+  height: 360px;
+  z-index: 3;
+  transform: translateX(0px) scale(1);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+}
+.img-wrapper.left {
+  width: 240px;
+  height: 300px;
+  z-index: 1;
+  transform: translateX(-260px) scale(0.88);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.img-wrapper.right {
+  width: 240px;
+  height: 300px;
+  z-index: 1;
+  transform: translateX(260px) scale(0.88);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(220, 227, 237, 0.5);
+  backdrop-filter: blur(2px);
+  border-radius: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.img-wrapper.left:hover .blur-overlay,
+.img-wrapper.right:hover .blur-overlay {
+  opacity: 0.15;
+}                 
+
+
+.about_images:hover .pic1 ,.about_images:hover .pic2, .about_images:hover .pic3 {
+  filter: blur(2px);    
+  transform: scale(0.95); 
+}
+
+
+.about_btn {
+  background-color: #FFD230;
+  color: #132C41;
+  border: none;
+  padding: 12px 40px;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.about_btn:hover {
+  box-shadow: 0px 5px 15px rgba(245, 197, 24, 0.6);
+}
+
+
+
+
+SERVICES : 
+
+
+
+.services {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 60px;
+  background-color: #DBE0EB;
+  min-height: 100vh;
+}
+
+.services_text {
+  max-width: 600px;
+  margin-bottom: 20px;
+  margin-left: 45px;
+}
+
+.services_text h2 {
+  font-size: 45px;
+  font-weight: bold;
+  color: #132C41;
+  margin-bottom: 5px;
+}
+
+.services_text p {
+  font-size: 18px;
+  color: #284B69;
+}
+
+.services_images {
+  display: flex;
+  gap: 50px; 
+  justify-content: center;
+}
+
+.carte {
+  background-color: #BDCDE1;
+  border-radius: 20px;
+  padding: 20px;
+  width: 280px; 
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carte:hover {
+  transform: scale(1.07);
+  box-shadow: 0px 15px 40px rgba(2, 10, 27, 0.15);
+}
+
+.service-pic {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.carte h3 {
+  color: #132C41;
+;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.carte p {
+  color: #132C41;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+
+
+HOW IT WORKS JSX : 
+
+import icon_1 from '../../Assets/icon_1.png';
+import icon_2 from '../../Assets/icon_2.png';
+import icon_3 from '../../Assets/icon_3.png';
+import icon_4 from '../../Assets/icon_4.png';
+import icon_5 from '../../Assets/icon_5.png';
+import './HowItWorks.css';
+
+
+function HowItWorks() {
+
+   return (
+    <div className="howItWorks">
+        <div className="hiw_left">
+
+          <svg className="dashed-arc" viewBox="0 0 300 600">
+           <path
+            d="M 0 30 A 270 270 0 0 1 0 570"
+             fill="none"
+            stroke="#132C41"
+            strokeWidth="2.5"
+            strokeDasharray="8 6"
+          />
+           <circle cx="155" cy="80"  r="7" fill="#132C41"/>
+           <line x1="150" y1="80" x2="300" y2="30" stroke="#132C41" strokeWidth="1.5"/>
+           <circle cx="238" cy="165" r="7" fill="#132C41"/>
+           <line x1="240" y1="165" x2="420" y2="150" stroke="#132C41" strokeWidth="1.5"/>
+           <circle cx="270" cy="290" r="7" fill="#132C41"/>
+           <line x1="270" y1="290" x2="420" y2="290" stroke="#132C41" strokeWidth="1.5"/>
+           <circle cx="250" cy="400" r="7" fill="#132C41"/>
+           <line x1="250" y1="400" x2="420" y2="430" stroke="#132C41" strokeWidth="1.5"/>
+           <circle cx="182" cy="500" r="7" fill="#132C41"/>
+           <line x1="180" y1="500" x2="300" y2="550" stroke="#132C41" strokeWidth="1.5"/>
+
+         </svg>
+
+        <div className="half_circle"></div>
+
+       <div className="hiw_text">
+         <h2>Prediction model</h2>   
+         <h3>How the app works</h3>
+       </div>
+
+     </div>
+
+        <div className="hiw_right">
+            <div className="step1">
+              <div className="step-number">01</div>
+              <div className="step-card">
+                <div className="step-text">
+                   <h3>Student submits work</h3>
+                   <p>The student submits their academic work and grades to the platform.</p>
+                </div>
+               <img src={icon_1} alt="icone" className="step-icone"/>
+             </div>
+             </div>
+
+            <div className="step2">
+              <div className="step-number">02</div>
+              <div className="step-card">
+                 <div className="step-text">
+                  <h3>Data extraction</h3>
+                  <p>Our algorithm extracts and processes the key data from the student's work.</p>
+                 </div>
+                  <img src={icon_2} alt="icone" className="step-icone"/>
+             </div>
+             </div>
+
+            <div className="step3">
+              <div className="step-number">03</div>
+              <div className="step-card">
+                 <div className="step-text">
+                    <h3>AI analysis</h3>
+                    <p>The data is analyzed and interpreted to understand the student's academic level.</p>
+                  </div>
+               <img src={icon_3} alt="icone" className="step-icone"/>
+             </div>
+             </div>
+
+            <div className="step4">
+              <div className="step-number">04</div>
+              <div className="step-card">
+                 <div className="step-text">
+                   <h3>Grading and review</h3>
+                   <p>Our AI grading model evaluates and validates the student's performance accurately.</p>
+                  </div>
+                <img src={icon_4} alt="icone" className="step-icone"/>
+             </div>
+             </div>
+            
+
+            <div className="step5">
+              <div className="step-number">05</div>
+              <div className="step-card">
+                 <div className="step-text">
+                    <h3>Grades and feedback generated</h3>
+                    <p>The student receives their final grades and personalized feedback.</p>
+                  </div>
+                <img src={icon_5} alt="icone" className="step-icone"/>
+              </div>
+             </div>
+
+           </div>
+
+      </div>
+   )
+
+}
+
+export default HowItWorks;
+
+
+
+
+HOW IT WORKS CSS : 
+
+
+.howItWorks {
+  display: flex;
+  left:50px;
+  padding-top: 20px; 
+  align-items: center;
+  justify-content: space-between;
+  background-color:#DBE0EB; 
+  padding: 40px 60px;
+  min-height: 100vh;
+}
+
+.hiw_left {
+  position: relative; 
+  left:80px;
+  width: 35%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hiw_text {
+  position: absolute;
+  top: 50%;
+  width:250px;
+  margin-right:250px;
+  transform: translateY(-50%);
+
+  z-index: 3;
+}
+
+
+.hiw_text h2 {
+  left:20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #132C41;
+  
+}
+
+
+.hiw_text h3 {
+  font-size: 16px;
+  color: #284B69;
+  margin-top: 5px;
+  text-align: center;
+}
+ 
+.half_circle {
+  position: absolute;
+  left: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 240px;
+  border-radius: 0 170px 170px 0;
+  border: 18px solid #284B69;
+  border-left: none;
+  z-index: 2;
+}
+
+
+.hiw_right {
+  position: relative;
+  bottom:  10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 65%;
+}
+
+.step1, .step2, .step3, .step4, .step5 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.step1 , .step5{
+  margin-left: 1px;
+
+}
+
+.step2 , .step4{
+  margin-left: 40px;
+
+}
+
+.step3{
+  margin-left: 70px;
+
+
+}
+.step-number {
+  background-color: #132C41;
+  color: white;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.step-card {
+  display: flex;
+  background-color: #9bb1cb;
+  border-radius: 50px;
+  padding: 10px 25px;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.step-card:hover {
+  transform: translateX(10px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.step-card h3 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.step-card p {
+  font-size: 12px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.step-icone {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-left: 15px;
+}
+
+
+.dashed-arc {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+
+
+CONTACT US : 
+
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 60px;
+  background-color: #DBE0EB;
+  min-height: 100vh;
+   width: 100%;
+   box-sizing: border-box;
+}
+.contact-text {
+  max-width: 600px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 45px;
+  font-weight: bold;
+  color: #132C41;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact p {
+  font-size: 18px;
+  color: #284B69;
+  text-align: center;
+  max-width: 600px;
+  margin-top: 5px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 100%;
+  margin-top: 5px;
+} 
+
+.small{
+  width: 400px;
+  height: 50px;
+  border:#132C41 1px solid;
+  border-radius: 8px;
+}
+
+.title{ 
+  width: 100%;
+  height: 50px;
+  border:#132C41 1px solid;
+  border-radius: 8px;
+
+}
+
+.text-area{
+  width: 100%;
+  height: 100px;
+  border:#132C41 1px solid;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.btn_submit {
+  background-color: #FFD230;
+  color: #fefeff;
+  border: none;
+  padding: 12px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  width:250px;
+  align-self: center;
+  height: 50px;
+ 
+}
+
+
+.btn_submit:hover {
+  box-shadow: 0px 5px 15px rgba(245, 197, 24, 0.6);
+}
+
+.row1, .col1, .col2, .row4 {
+  display: flex;
+  flex-direction: column;
+  gap : 5px;
+ 
+}
+.row1 p, .col1 p, .col2 p, .row4 p {
+  font-size: 18px;
+  color: #284B69;
+  font-weight: bold;
+  text-align: left;
+  max-width: 600px;
+  margin-bottom: 1px;
+}
+
+
+
+.row2, .row3 {
+  display: flex;
+  gap: 50px;
+}
+
+input ,textarea { 
+  height: 40px;
+  font-size: 16px;
+  border: 1px solid #132C41;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+
+
+
+FOOTER : 
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  background-color: #132C41;
+  padding: 30px 60px;
+  color: white;
+  height: 400px;
+
+   
+}
+.footer-part1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  
+}
+.footer-part1 h2{
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.email-subscription {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.email-subscription input {
+   padding: 12px 130px 12px 20px;
+  border: 1px solid #284B69;
+  border-radius: 15px; 
+  background-color: #e8edf2; 
+  color: #132C41;
+  font-size: 14px;
+  width: 380px;
+  outline: none;
+  height: 50px;
+}
+
+.email-subscription input::placeholder {
+  color: #aaa;
+}
+
+.email-subscription button {
+  position: absolute; 
+  right: 4px;
+  transform: translateY(-50%); 
+  top: 50%;
+  height: 80%;
+  padding: 0 20px;
+  background-color: #132C41;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+  
+}
+
+.btn-text {
+  background: linear-gradient(to bottom, #e8e6de, #ebde53);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #FFD230;
+  margin-bottom: 30px;
+}
+
+
+.footer-part2{
+  display: flex;
+  justify-content: flex-end; 
+  gap: 80px;
+  margin-bottom: 20px;
+  padding-right: 40px;
+}
+
+
+.footer-part2 h2 {
+  font-size: 32px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.footer-part2 p{
+ font-size: 17px;
+  color: white;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-align: left;
+}
+.footer-part2 p:hover {
+  color: #FFD230;
+}
+
+
+
+SchoolDashboard : 
+
+.school-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background-color: #DBE0EB;
+}
+
+.dashboard-content {
+  margin-left: 220px;
+  flex: 1;
+  padding: 20px 40px;
+}
+
+.dashboard-main {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+}
+
+/* Top row: bar chart + stats cards side by side */
+.dashboard-upper {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  height: 260px; /* control the height directly */
+  margin-bottom: 8px;
+}
+
+.dashboard-upper > :first-child {
+  flex: 1; /* bar chart takes remaining space */
+}
+
+.dashboard-upper > :last-child {
+  width: 280px; /* stats cards fixed width */
+  flex-shrink: 0;
+}
+
+/* Bottom row: donut chart + (future: line chart) side by side */
+.dashboard-lower {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.dashboard-lower > * {
+flex :0.5; /* each takes half the width */
+}

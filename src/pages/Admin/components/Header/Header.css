@@ -1,0 +1,65 @@
+.header {
+  position: sticky; /* 👈 sticks to the top */
+  top: 0;
+  z-index: 100; /* 👈 stays above everything */
+  background-color: #DBE0EB; /* 👈 same as dashboard background */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.header-bar {
+  background: linear-gradient(to right, #6da5c8 0%, #274967 40%, #1a3c57 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 20px;
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 35px;
+  margin-right: 45px;
+  height: 60px;
+  position: relative;
+  overflow: visible;
+ 
+}
+
+.header-bar p {
+  color: #1a1a2e;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.header-bar span {
+  color: #1a1a2e;
+  font-weight: 700;
+}
+
+.header-img-wrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #1a3c57;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  right: -40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+
+}
+
+.header-line {
+  height: 2px;
+  background-color: #FFD230;
+  margin-top: 0;
+  border-radius: 2px;
+}

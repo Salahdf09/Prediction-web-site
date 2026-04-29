@@ -1,0 +1,24 @@
+.global-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.top-row {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.bottom-row {
+  margin-top:30px ;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  align-items: stretch;
+}
+
+.bottom-row > * {
+  flex: 1;
+}

@@ -1,0 +1,71 @@
+.signup-choice {
+  min-height: 100vh;
+  background-color: #DBE0EB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.signup-choice h1 {
+  font-size: clamp(32px, 5vw, 50px);
+  font-weight: bold;
+  color: #132C41;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.signup-choice > p {
+  font-size: clamp(16px, 1.5vw, 20px);
+  color: #284B69;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.choice-cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.choice-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 220px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.choice-card:hover {
+  transform: translateY(-10px); /* 👈 floats up on hover */
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
+  border: 2px solid #FFD230; /* 👈 yellow border on hover */
+}
+
+.choice-icon {
+  font-size: 50px;
+  display: block;
+  margin-bottom: 20px;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 80px;
+}
+
+.choice-card h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #132C41;
+  margin-bottom: 10px;
+}
+
+.choice-card p {
+  font-size: 14px;
+  color: #284B69;
+  line-height: 1.5;
+}

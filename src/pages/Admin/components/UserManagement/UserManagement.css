@@ -1,0 +1,170 @@
+.um-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Top bar: tabs + search ── */
+.um-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.um-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+}
+
+.um-tab {
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.um-tab:hover {
+  background: #e8edf3;
+}
+
+.um-tab.active {
+  background: #ffffff;
+  color: #132C41;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Search ── */
+.um-search {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 7px 16px;
+  gap: 8px;
+  width: 150px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.um-search-icon {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.um-search input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #555;
+  background: transparent;
+  width: 100%;
+}
+
+/* ── Table card ── */
+.um-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.um-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.um-table thead tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.um-table th {
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.um-table td {
+  padding: 13px 14px;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.um-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.um-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.um-selected {
+  background: #eef5fb !important;
+}
+
+/* ── Checkbox ── */
+.um-table input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #2E6A8E;
+  cursor: pointer;
+}
+
+/* ── Avatar + name ── */
+.um-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.um-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #d0d5de;
+  flex-shrink: 0;
+}
+
+.um-id {
+  color: #555;
+  font-weight: 500;
+}
+
+/* ── Actions ── */
+.um-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.um-btn-delete,
+.um-btn-edit {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.um-btn-delete img,
+.um-btn-edit img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.um-btn-delete:hover { background: #fde8e8; }
+.um-btn-edit:hover   { background: #e8f0fe; }

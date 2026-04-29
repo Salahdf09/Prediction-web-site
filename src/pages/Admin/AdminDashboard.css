@@ -1,0 +1,13 @@
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background-color: #DBE0EB;
+}
+
+.dashboard-content {
+  margin-left: 220px;
+  flex: 1;
+  padding: 20px;
+  background-color: #DBE0EB;
+  min-height: 100vh;
+}
