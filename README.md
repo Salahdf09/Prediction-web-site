@@ -1,31 +1,96 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-# integration-front-back
-integration
-=======
-# React + Vite
+# Prediction Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Full-stack web app for student academic prediction and orientation.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Frontend: React + Vite
+- Backend: FastAPI + SQLAlchemy
+- Database: PostgreSQL
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```text
+frontend/                    React application
+backend/Prediction-website/  FastAPI backend
+```
 
-## Expanding the ESLint configuration
+The older duplicated files at the repository root are not used by the final app.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
->>>>>>> 1f36bcc775d325d97ce4b5ff28a614fa1e96b9bc
-=======
-# prediction-_app-
-Web Application for Predicting Official Exam Results
->>>>>>> origin/prediction-_app--yousra-front
-=======
-# prediction-_app-
-Web Application for Predicting Official Exam Results
->>>>>>> origin/prediction-_app--Atefhh
+## Backend Setup
+
+1. Create a PostgreSQL database, for example `prediction_db`.
+2. Copy the backend environment example:
+
+```powershell
+cd backend/Prediction-website
+copy .env.example .env
+```
+
+3. Edit `.env` if your PostgreSQL username, password, host, or database name is different.
+4. Install Python dependencies:
+
+```powershell
+pip install -r requirements.txt
+```
+
+5. Create demo data:
+
+```powershell
+python populate_db.py
+```
+
+6. Run the backend:
+
+```powershell
+python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+Health check:
+
+```text
+http://localhost:8000/health
+```
+
+## Frontend Setup
+
+Open a second terminal:
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+Open:
+
+```text
+http://localhost:5173
+```
+
+## Demo Accounts
+
+Password for all accounts:
+
+```text
+Demo123!
+```
+
+| Role | Email | Extra Code |
+|---|---|---|
+| Student | `demo.student@example.com` | `STD-DEMO-001` |
+| Parent | `demo.parent@example.com` | `STD-DEMO-001` |
+| School | `demo.school@example.com` | `SCH-DEMO-001` |
+| Admin | `demo.admin@example.com` | `ADM-DEMO-001` |
+
+The normal login page uses email and password.
+
+## Root Commands
+
+From the repository root:
+
+```powershell
+npm.cmd run dev:backend
+npm.cmd run dev:frontend
+npm.cmd run build
+```

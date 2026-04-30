@@ -5,6 +5,11 @@ from database.database import get_db
 from models.models import Student, School
 from schemas.schemas import StudentCreate, StudentLogin, StudentResponse, Token
 from utils.auth import verify_password, get_password_hash, create_access_token
+from .dashboard_helpers import (
+    orientation_for_student,
+    prediction_for_student,
+    progress_for_student,
+)
 from datetime import timedelta
 from jose import JWTError, jwt
 import os
@@ -70,3 +75,27 @@ def login_student(email: str = Query(...), user_code: str = Query(...), password
         expires_delta=timedelta(minutes=30)
     )
     return {"access_token": access_token, "token_type": "bearer", "role": "student"}
+
+
+@router.get("/{student_id}/progress")
+def get_student_progress(student_id: int, db: Session = Depends(get_db)):
+    student = db.query(Student).filter(Student.student_id == student_id).first()
+    if not student:
+        raise HTTPException(status_code=404, detail="Student not found")
+    return progress_for_student(student)
+
+
+@router.get("/{student_id}/prediction")
+def get_student_prediction(student_id: int, db: Session = Depends(get_db)):
+    student = db.query(Student).filter(Student.student_id == student_id).first()
+    if not student:
+        raise HTTPException(status_code=404, detail="Student not found")
+    return prediction_for_student(db, student)
+
+
+@router.get("/{student_id}/orientation")
+def get_student_orientation(student_id: int, db: Session = Depends(get_db)):
+    student = db.query(Student).filter(Student.student_id == student_id).first()
+    if not student:
+        raise HTTPException(status_code=404, detail="Student not found")
+    return orientation_for_student(db, student)

@@ -2,10 +2,11 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from database.database import get_db
-from models.models import School
+from models.models import School, Student
 from schemas.schemas import SchoolCreate, SchoolResponse, Token
 from utils.auth import verify_password, get_password_hash, create_access_token
 from datetime import timedelta
+from .dashboard_helpers import school_stats_for_students, student_list_item
 
 router = APIRouter(prefix="/schools", tags=["schools"])
 
@@ -43,3 +44,19 @@ def login_school(email: str = Query(...), school_code: str = Query(...), passwor
         expires_delta=timedelta(minutes=30)
     )
     return {"access_token": access_token, "token_type": "bearer", "role": "school"}
+
+
+@router.get("/{school_id}/students")
+def get_school_students(school_id: int, db: Session = Depends(get_db)):
+    if not db.query(School).filter(School.school_id == school_id).first():
+        raise HTTPException(status_code=404, detail="School not found")
+    students = db.query(Student).filter(Student.school_id == school_id).all()
+    return {"students": [student_list_item(db, student) for student in students]}
+
+
+@router.get("/{school_id}/statistics")
+def get_school_statistics(school_id: int, db: Session = Depends(get_db)):
+    if not db.query(School).filter(School.school_id == school_id).first():
+        raise HTTPException(status_code=404, detail="School not found")
+    students = db.query(Student).filter(Student.school_id == school_id).all()
+    return school_stats_for_students(db, students)

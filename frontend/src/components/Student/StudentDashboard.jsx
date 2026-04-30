@@ -458,7 +458,8 @@ function normalizeOrientation(orientation, prediction) {
 }
 
 function buildStudent(profile, progress, prediction, orientation) {
-  const nameParts = splitName(profile?.name, profile?.email);
+  const profileName = profile?.name || `${profile?.first_name || ""} ${profile?.last_name || ""}`.trim();
+  const nameParts = splitName(profileName, profile?.email);
   const grade = latestGrade(progress);
   const trimesters = [
     { label: "Trimester 1", grade: Number(grade?.trimester1 ?? 0) },

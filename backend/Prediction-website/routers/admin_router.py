@@ -2,10 +2,11 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from database.database import get_db
-from models.models import User
+from models.models import Parent, School, Student, User
 from schemas.schemas import AdminCreate, AdminLogin, AdminResponse, Token
 from utils.auth import verify_password, get_password_hash, create_access_token
 from datetime import timedelta
+from .dashboard_helpers import school_stats_for_students
 
 router = APIRouter(prefix="/admins", tags=["admins"])
 
@@ -44,5 +45,22 @@ def login_admin(email: str = Query(...), admin_code: str = Query(...), password:
         expires_delta=timedelta(minutes=30)
     )
     return {"access_token": access_token, "token_type": "bearer", "role": "admin"}
+
+
+@router.get("/{admin_id}/statistics")
+def get_admin_statistics(admin_id: int, db: Session = Depends(get_db)):
+    if not db.query(User).filter(User.user_id == admin_id, User.role == "admin").first():
+        raise HTTPException(status_code=404, detail="Admin not found")
+
+    students = db.query(Student).all()
+    student_stats = school_stats_for_students(db, students)
+    return {
+        "global_pass_rate": student_stats["pass_rate"],
+        "total_predictions": student_stats["total_predictions"],
+        "total_students": student_stats["total_students"],
+        "total_parents": db.query(Parent).count(),
+        "total_schools": db.query(School).count(),
+        "pending_approvals": 0,
+    }
 
 

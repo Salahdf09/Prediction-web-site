@@ -7,7 +7,7 @@ import loginImg  from "../../../assets/images/LoginImages/login.png";
 import vectLeft  from "../../../assets/images/LoginImages/vectleft.png";
 import vectRight from "../../../assets/images/LoginImages/vectright.png";
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 const isValidEmailFormat = (email) =>
