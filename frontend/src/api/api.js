@@ -128,4 +128,13 @@ export const getParentChildOrientation = (parentId, studentId) => apiGet(`/paren
 // School/admin dashboards
 export const getSchoolStatistics = (schoolId) => apiGet(`/schools/${schoolId}/statistics`);
 export const getSchoolStudents = (schoolId) => apiGet(`/schools/${schoolId}/students`);
+export const createSchoolStudent = (schoolId, data) =>
+  apiPost(`/schools/${schoolId}/students`, {
+    name: data.name,
+    email: data.email,
+    studentPersonalId: data.studentPersonalId || data.id,
+    level: data.level || data.academicYear || null,
+    stream: data.stream || null,
+    password: data.password,
+  });
 export const getAdminStatistics = (adminId) => apiGet(`/admins/${adminId}/statistics`);

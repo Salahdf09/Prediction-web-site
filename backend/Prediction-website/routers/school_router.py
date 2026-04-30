@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import func
 from database.database import get_db
 from models.models import School, Student
-from schemas.schemas import SchoolCreate, SchoolResponse, Token
+from schemas.schemas import SchoolCreate, SchoolResponse, SchoolStudentCreate, Token
 from utils.auth import verify_password, get_password_hash, create_access_token
 from datetime import timedelta
 from .dashboard_helpers import school_stats_for_students, student_list_item
@@ -54,9 +54,47 @@ def get_school_students(school_id: int, db: Session = Depends(get_db)):
     return {"students": [student_list_item(db, student) for student in students]}
 
 
+@router.post("/{school_id}/students")
+def create_school_student(school_id: int, payload: SchoolStudentCreate, db: Session = Depends(get_db)):
+    if not db.query(School).filter(School.school_id == school_id).first():
+        raise HTTPException(status_code=404, detail="School not found")
+    if db.query(Student).filter(func.lower(Student.email) == payload.email.lower()).first():
+        raise HTTPException(status_code=400, detail="Student email already registered")
+    if db.query(Student).filter(func.lower(Student.user_code) == payload.studentPersonalId.lower()).first():
+        raise HTTPException(status_code=400, detail="Student ID already exists")
+
+    first_name, last_name = _student_names(payload)
+    student = Student(
+        school_id=school_id,
+        user_code=payload.studentPersonalId,
+        first_name=first_name,
+        last_name=last_name,
+        email=payload.email,
+        grade=payload.level,
+        stream=payload.stream,
+        password_hash=get_password_hash(payload.password),
+        attendance_rate=0.0,
+        homework_rate=0.0,
+    )
+    db.add(student)
+    db.commit()
+    db.refresh(student)
+    return student_list_item(db, student)
+
+
 @router.get("/{school_id}/statistics")
 def get_school_statistics(school_id: int, db: Session = Depends(get_db)):
     if not db.query(School).filter(School.school_id == school_id).first():
         raise HTTPException(status_code=404, detail="School not found")
     students = db.query(Student).filter(Student.school_id == school_id).all()
     return school_stats_for_students(db, students)
+
+
+def _student_names(payload: SchoolStudentCreate) -> tuple[str, str]:
+    if payload.firstName or payload.familyName:
+        return (payload.firstName or "Student").strip(), (payload.familyName or "").strip()
+
+    parts = (payload.name or "Student").strip().split()
+    first_name = parts[0] if parts else "Student"
+    last_name = " ".join(parts[1:])
+    return first_name, last_name

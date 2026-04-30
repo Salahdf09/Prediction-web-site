@@ -33,9 +33,19 @@ function SchoolDashboard() {
     loadSchoolData();
   }, [schoolId]);
 
+  const reloadSchoolData = async () => {
+    if (!schoolId) return;
+    const [statsResult, studentsResult] = await Promise.allSettled([
+      getSchoolStatistics(schoolId),
+      getSchoolStudents(schoolId),
+    ]);
+    if (statsResult.status === 'fulfilled') setStats(statsResult.value);
+    if (studentsResult.status === 'fulfilled') setStudents(studentsResult.value.students || []);
+  };
+
   const renderContent = () => {
     if (activePage === 'global') return <GlobalStats stats={stats} />;
-    if (activePage === 'students') return <StudentsList students={students} />;
+    if (activePage === 'students') return <StudentsList schoolId={schoolId} students={students} onStudentCreated={reloadSchoolData} />;
     if (activePage === 'profile') return <SchoolProfile />;
     return null;
   };

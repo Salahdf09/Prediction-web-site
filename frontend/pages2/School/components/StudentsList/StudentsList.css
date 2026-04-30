@@ -282,6 +282,16 @@
   letter-spacing: 0.5px;
 }
 
+.modal-error {
+  background: #fde8e8;
+  color: #9b2c2c;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+}
+
 .modal-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -472,4 +482,10 @@
     width: 100%;
     box-sizing: border-box;
   }
+}
+
+.btn-confirm:disabled,
+.btn-cancel-modal:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
 }

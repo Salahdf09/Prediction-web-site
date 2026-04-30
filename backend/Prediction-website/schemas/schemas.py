@@ -11,6 +11,16 @@ class StudentCreate(BaseModel):
     stream: str
     password: str
 
+class SchoolStudentCreate(BaseModel):
+    name: Optional[str] = None
+    firstName: Optional[str] = None
+    familyName: Optional[str] = None
+    email: EmailStr
+    studentPersonalId: str
+    level: Optional[str] = None
+    stream: Optional[str] = None
+    password: str
+
 class StudentLogin(BaseModel):
     email: EmailStr
     user_code: str
