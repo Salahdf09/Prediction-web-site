@@ -5,11 +5,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Database URL from environment or default to SQLite for development
-DATABASE_URL = os.getenv(
-    "DATABASE_URL",
-    "sqlite:///./test.db"  # SQLite for development
-)
+DEFAULT_DATABASE_URL = "postgresql://postgres:postgres@localhost:5432/prediction_db"
+DATABASE_URL = os.getenv("DATABASE_URL", DEFAULT_DATABASE_URL)
+
+# SQLAlchemy expects the postgresql:// scheme.
+if DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
 # Create engine with proper configuration
 if DATABASE_URL.startswith("sqlite"):
